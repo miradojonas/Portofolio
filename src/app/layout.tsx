@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { content } from "@/app/content";
 
 export const metadata: Metadata = {
-  title: "Jonas — Portfolio",
-  description: "Portfolio de Jonas (DevOps / Dev Web / Admin Sys).",
+  title: `${content.site.name} — ${content.site.title}`,
+  description: content.site.description,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <body className="min-h-dvh bg-zinc-950 text-zinc-100 antialiased">
+      <body>
         {children}
       </body>
     </html>
