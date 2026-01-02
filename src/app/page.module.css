@@ -2,6 +2,94 @@
 
 /* CSS Modules + Tailwind (@apply) */
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pageEnter {
+  animation: fadeUp 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal1 {
+  animation-delay: 80ms;
+}
+
+.reveal2 {
+  animation-delay: 160ms;
+}
+
+.reveal3 {
+  animation-delay: 240ms;
+}
+
+.reveal4 {
+  animation-delay: 320ms;
+}
+
+.tap {
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.tap:active {
+  transform: scale(0.98);
+  opacity: 0.92;
+}
+
+.tap:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.scrollReveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 520ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scrollRevealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageEnter,
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .scrollReveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .tap {
+    transition: none;
+  }
+
+  .tap:active {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .container {
   @apply mx-auto w-full max-w-6xl px-4;
 }
@@ -20,6 +108,10 @@
 
 .navLinks {
   @apply hidden gap-5 text-sm text-zinc-700 md:flex;
+}
+
+.navLinks a {
+  @apply hover:text-zinc-900;
 }
 
 .hero {
