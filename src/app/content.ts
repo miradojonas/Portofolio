@@ -1,23 +1,23 @@
 export const content = {
   site: {
-    name: "Ton Nom",
-    title: "Développeur Full‑Stack",
+    name: "RANAIVOHASIVONY Onjamirado Christian Jonas",
+    title: "Futur Devops / AdminSys",
     description:
       "Je construis des applications web rapides, accessibles et maintenables.",
-    location: "France",
+    location: "Madagascar",
   },
 
   links: {
-    email: "ton.email@example.com",
-    github: "https://github.com/toncompte",
-    linkedin: "https://www.linkedin.com/in/tonprofil/",
+    email: "miradojonas11@gmail.com",
+    github: "https://github.com/miradojonas",
+    linkedin: "https://www.linkedin.com/in/onjamirado-christian-jonas-ranaivohasivony-4195b036a/",
     cv: "/cv.pdf",
   },
 
   hero: {
-    headline: "Salut, moi c’est Ton Nom.",
+    headline: "Salut, moi c’est Mirado.",
     subheadline:
-      "Développeur Full‑Stack. J’aime créer des produits web avec une UX propre et du code solide.",
+      "Actuellement en 2ème année en informatique à l'École Supérieur des Technologies de l'Information, je suis à la recherche d'une alternance/stage aux seins d'une entreprise.",
     ctas: [
       { label: "Voir mes projets", href: "#projects" },
       { label: "Me contacter", href: "#contact" },
