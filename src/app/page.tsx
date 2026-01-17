@@ -43,9 +43,6 @@ export default function Home() {
               <a className={styles.tap} href="#projects">
                 Projets
               </a>
-              <a className={styles.tap} href="#experience">
-                Expérience
-              </a>
               <a className={styles.tap} href="#contact">
                 Contact
               </a>
@@ -77,9 +74,11 @@ export default function Home() {
                   {cta.label}
                 </a>
               ))}
-              <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.cv}>
-                Télécharger le CV
-              </a>
+              {content.links.cv ? (
+                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.cv}>
+                  Télécharger le CV
+                </a>
+              ) : null}
             </div>
 
             <div className={styles.metaRow}>
@@ -176,29 +175,6 @@ export default function Home() {
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <Section id="experience" title={content.experience.title}>
-              <div className={styles.timeline}>
-                {content.experience.items.map((e) => (
-                  <div key={`${e.role}-${e.company}`} className={styles.timelineItem}>
-                    <div className={styles.timelineLeft}>
-                      <div className={styles.timelineRole}>{e.role}</div>
-                      <div className={styles.timelineCompany}>{e.company}</div>
-                      <div className={styles.timelinePeriod}>{e.period}</div>
-                    </div>
-                    <ul className={styles.bullets}>
-                      {e.points.map((pt) => (
-                        <li key={pt} className={styles.p}>
-                          {pt}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </Section>
-          </RevealOnScroll>
-
-          <RevealOnScroll>
             <Section id="contact" title={content.contact.title}>
               <p className={styles.p}>{content.contact.text}</p>
 
@@ -211,6 +187,9 @@ export default function Home() {
                 </a>
                 <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.linkedin}>
                   LinkedIn
+                </a>
+                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.linkedin}>
+                  Facebook
                 </a>
               </div>
             </Section>
@@ -233,6 +212,9 @@ export default function Home() {
               </a>
               <a className={styles.tap} href={`mailto:${content.links.email}`}>
                 Email
+              </a>
+              <a className={styles.tap} href={`mailto:${content.links.email}`}>
+                Facebook
               </a>
             </span>
           </div>
