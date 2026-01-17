@@ -1,7 +1,7 @@
 export const content = {
   site: {
     name: "RANAIVOHASIVONY Onjamirado Christian Jonas",
-    title: "Futur Devops / AdminSys",
+    title: "Futur DevOps / AdminSys",
     description:
       "Je construis des applications web rapides, accessibles et maintenables.",
     location: "Madagascar",
@@ -11,13 +11,14 @@ export const content = {
     email: "miradojonas11@gmail.com",
     github: "https://github.com/miradojonas",
     linkedin: "https://www.linkedin.com/in/onjamirado-christian-jonas-ranaivohasivony-4195b036a/",
-    cv: "/cv.pdf",
+    cv: "/cv/CV_de_Mirado.pdf",
+    facebook : "https://web.facebook.com/MiRaDo.JoNaS?locale=fr_FR"
   },
 
   hero: {
     headline: "Salut, moi c’est Mirado.",
     subheadline:
-      "Actuellement en 2ème année en informatique à l'École Supérieur des Technologies de l'Information, je suis à la recherche d'une alternance/stage aux seins d'une entreprise.",
+      "Actuellement en 2ème année en informatique à l’École Supérieure des Technologies de l’Information, je suis à la recherche d’une alternance / d’un stage au sein d’une entreprise.",
     ctas: [
       { label: "Voir mes projets", href: "#projects" },
       { label: "Me contacter", href: "#contact" },
@@ -27,8 +28,8 @@ export const content = {
   about: {
     title: "À propos",
     paragraphs: [
-      "Je suis étudiant en 2è en informatique dans le but devenir DevOps/AdminSys, j'ai déja développer des applications web modernes, du design système jusqu'au déploiement.",
-      "Je cherche une entreprise ou je peux mettre mes compétences à pratique tout en continuant en apprendre.",
+      "Je suis étudiant en 2ème année d’informatique avec l’objectif de devenir DevOps / AdminSys. J’ai déjà développé des applications web modernes, du design système jusqu’au déploiement.",
+      "Je cherche une entreprise où je peux mettre mes compétences en pratique tout en continuant à apprendre.",
     ],
     highlights: [
       { label: "Intérêts", value: "Jeu vidéo, billard, football" },
@@ -45,7 +46,7 @@ export const content = {
       },
       {
         name: "Backend",
-        items: ["Python (Django, Flask)", "PHP",],
+        items: ["Python (Django, Flask)", "PHP"],
       },
       {
         name: "DevOps",
@@ -53,12 +54,12 @@ export const content = {
       },
       {
         name: "Outils",
-        items: ["Microsoft Project", "Git/Github", "Jenkins", "VS Code"],
+        items: ["Microsoft Project", "Git/GitHub", "Jenkins", "VS Code"],
       },
       {
-        name : "Réseaux",
-        items : ["GNS3", "Wireshark", "Cisco Packet Tracer"]
-      }
+        name: "Réseaux",
+        items: ["GNS3", "Wireshark", "Cisco Packet Tracer"],
+      },
     ],
   },
 
@@ -88,28 +89,22 @@ export const content = {
       {
         name: "Gestion de notes étudiants",
         description:
-          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord avec une structure MVC.Gestion multi-rôles : étudiant, professeur, administrateur.Fonctionnalités principales :Inscription / connexion / déconnexion (sessions PHP).Tableau de bord adapté au rôle.Administrateur : gestion des utilisateurs (ajout / modification / suppression).Gestion des notes associées à un étudiant (enregistrement et consultation).",
+          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord, basée sur une structure MVC. Gestion multi-rôles : étudiant, professeur, administrateur. Fonctionnalités principales : inscription / connexion / déconnexion (sessions PHP), tableau de bord adapté au rôle, gestion des utilisateurs côté admin (ajout / modification / suppression), gestion des notes (enregistrement et consultation).",
         tags: ["PHP", "MySQL"],
         links: {
           demo: "https://gestiondenotes.xo.je/views/auth/login.php",
           repo: "https://github.com/miradojonas/Gestion-de-notes-etudiants",
         },
       },
-    ],
-  },
-
-  experience: {
-    title: "Expérience",
-    items: [
       {
-        role: "Développeur",
-        company: "Entreprise / Freelance",
-        period: "2024 — 2025",
-        points: [
-          "Livraison d’une application web de A à Z (frontend + backend).",
-          "Amélioration des performances et de l’accessibilité.",
-          "Mise en place CI/CD et Docker pour la mise en production.",
-        ],
+        name: "Tohan'asa",
+        description:
+          "Tohanasa est une application web complète qui aide un utilisateur à organiser sa vie professionnelle et son apprentissage au même endroit. Elle propose l’inscription/connexion, un espace pour gérer son CV, consulter et publier des offres d’emploi, suivre des formations (documents/vidéos), et interagir via un module social. Un chatbot est aussi intégré pour guider l’utilisateur et répondre aux questions directement dans l’application.",
+        tags: ["Django", "React.js", "SQLite", "API REST"],
+        links: {
+          demo: "",
+          repo: "https://github.com/miradojonas/Tohanasa",
+        },
       },
     ],
   },
