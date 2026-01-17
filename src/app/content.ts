@@ -88,11 +88,11 @@ export const content = {
       {
         name: "Gestion de notes étudiants",
         description:
-          "Un autre projet avec une fonctionnalité intéressante (auth, dashboard, etc.).",
+          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord avec une structure MVC.Gestion multi-rôles : étudiant, professeur, administrateur.Fonctionnalités principales :Inscription / connexion / déconnexion (sessions PHP).Tableau de bord adapté au rôle.Administrateur : gestion des utilisateurs (ajout / modification / suppression).Gestion des notes associées à un étudiant (enregistrement et consultation).",
         tags: ["PHP", "MySQL"],
         links: {
-          demo: "",
-          repo: "https://github.com/toncompte/projet2",
+          demo: "https://gestiondenotes.xo.je/views/auth/login.php",
+          repo: "https://github.com/miradojonas/Gestion-de-notes-etudiants",
         },
       },
     ],
