@@ -27,13 +27,12 @@ export const content = {
   about: {
     title: "À propos",
     paragraphs: [
-      "Je suis développeur full‑stack. Je travaille sur des applications web modernes, du design système jusqu’au déploiement.",
-      "Je cherche des projets où je peux livrer vite, bien, et apprendre en continu.",
+      "Je suis étudiant en 2è en informatique dans le but devenir DevOps/AdminSys, j'ai déja développer des applications web modernes, du design système jusqu'au déploiement.",
+      "Je cherche une entreprise ou je peux mettre mes compétences à pratique tout en continuant en apprendre.",
     ],
     highlights: [
-      { label: "Stack", value: "Next.js, Node.js, PostgreSQL" },
-      { label: "Intérêts", value: "DX, performance, accessibilité" },
-      { label: "Localisation", value: "France (remote possible)" },
+      { label: "Intérêts", value: "Jeu vidéo, billard, football" },
+      { label: "Localisation", value: "Antananarivo, Madagascar" },
     ],
   },
 
@@ -42,16 +41,24 @@ export const content = {
     groups: [
       {
         name: "Frontend",
-        items: ["Next.js", "React", "TypeScript", "HTML", "CSS"],
+        items: ["Next.js", "React", "TypeScript", "HTML", "CSS", "JS", "Bootstrap"],
       },
       {
         name: "Backend",
-        items: ["Node.js", "Express", "REST", "Auth", "PostgreSQL"],
+        items: ["Python (Django, Flask)", "PHP",],
       },
       {
         name: "DevOps",
         items: ["Docker", "Nginx", "GitHub Actions (CI)", "Linux"],
       },
+      {
+        name: "Outils",
+        items: ["Microsoft Project", "Git/Github", "Jenkins", "VS Code"],
+      },
+      {
+        name : "Réseaux",
+        items : ["GNS3", "Wireshark", "Cisco Packet Tracer"]
+      }
     ],
   },
 
@@ -59,20 +66,30 @@ export const content = {
     title: "Projets",
     items: [
       {
-        name: "Projet 1",
+        name: "Planify",
         description:
-          "Description courte : le problème, la solution, et ton impact.",
-        tags: ["Next.js", "TypeScript"],
+          "Description: Planify est une solution web qui centralise l’organisation scolaire (emploi du temps, calendrier, devoirs, messages et notifications) dans un seul espace. Elle évite la dispersion des infos et réduit les oublis grâce à un tableau de bord “ce qui compte aujourd’hui”. Les fonctionnalités s’adaptent au rôle (élève/prof/admin) pour que chacun ait les bons droits et les bonnes actions.",
+        tags: ["Flask", "HTML/CSS/JS", "SQLite", "Docker + Docker compose"],
         links: {
-          demo: "https://example.com",
-          repo: "https://github.com/toncompte/projet1",
+          demo: "https://planify-tau-seven.vercel.app/",
+          repo: "https://github.com/miradojonas/Planify",
         },
       },
       {
-        name: "Projet 2",
+        name: "Simulation d'une connectivité entre Routeur et Switch",
+        description:
+          "Simulation d'une connectivité entre routeur et switch (configuration + tests de connectivité).",
+        tags: ["Réseaux"],
+        links: {
+          demo: "",
+          repo: "",
+        },
+      },
+      {
+        name: "Gestion de notes étudiants",
         description:
           "Un autre projet avec une fonctionnalité intéressante (auth, dashboard, etc.).",
-        tags: ["Node.js", "PostgreSQL"],
+        tags: ["PHP", "MySQL"],
         links: {
           demo: "",
           repo: "https://github.com/toncompte/projet2",
