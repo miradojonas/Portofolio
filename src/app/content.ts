@@ -1,10 +1,25 @@
 export const content = {
   site: {
     name: "RANAIVOHASIVONY Onjamirado Christian Jonas",
-    title: "Futur DevOps / AdminSys",
+    title: "Futur DevOps / AdminSys / Backend développeur",
     description:
-      "Je construis des applications web rapides, accessibles et maintenables.",
+      "Je construis des applications web, accessibles et maintenables.",
     location: "Madagascar",
+  },
+
+  profile: {
+    image: {
+      src: "/profile.svg",
+      alt: "Photo de profil",
+    },
+    details: [
+      { label: "Localisation", value: "Antananarivo, Madagascar" },
+      {
+        label: "Objectif",
+        value: "Alternance / stage (DevOps / AdminSys / Backend)",
+      },
+      { label: "Email", value: "miradojonas11@gmail.com" },
+    ],
   },
 
   links: {
@@ -18,7 +33,7 @@ export const content = {
   hero: {
     headline: "Salut, moi c’est Mirado.",
     subheadline:
-      "Actuellement en 2ème année en informatique à l’École Supérieure des Technologies de l’Information, je suis à la recherche d’une alternance / d’un stage au sein d’une entreprise.",
+      "Étudiant en informatique, je construis des projets concrets (web, backend, DevOps) et je cherche une alternance / un stage.",
     ctas: [
       { label: "Voir mes projets", href: "#projects" },
       { label: "Me contacter", href: "#contact" },
@@ -28,8 +43,8 @@ export const content = {
   about: {
     title: "À propos",
     paragraphs: [
-      "Je suis étudiant en 2ème année d’informatique avec l’objectif de devenir DevOps / AdminSys. J’ai déjà développé des applications web modernes, du design système jusqu’au déploiement.",
-      "Je cherche une entreprise où je peux mettre mes compétences en pratique tout en continuant à apprendre.",
+      "Actuellement en 2ème année à l’École Supérieure des Technologies de l’Information, je vise un parcours DevOps / AdminSys / backend.",
+      "J’aime comprendre tout le cycle: conception, développement, déploiement, et je progresse en continu via des projets et des formations.",
     ],
     highlights: [
       { label: "Intérêts", value: "Jeu vidéo, billard, football" },
@@ -41,24 +56,60 @@ export const content = {
     title: "Compétences",
     groups: [
       {
+        name : "Langage de programmation",
+        items : [
+          { name: "C", level: "Intermédiaire" },
+          { name: "Python", level: "Intermédiaire" },
+          { name: "JavaScript", level: "Base" },
+          { name: "PHP", level: "Intermédiaire" },
+        ],
+      },
+      {
         name: "Frontend",
-        items: ["Next.js", "React", "TypeScript", "HTML", "CSS", "JS", "Bootstrap"],
+        items: [
+          { name: "Next.js", level: "Débutant" },
+          { name: "React", level: "Débutant" },
+          { name: "TypeScript", level: "Débutant" },
+          { name: "CSS", level: "Intermédiaire" },
+          { name: "Bootstrap", level: "Intermédiaire" },
+        ],
       },
       {
         name: "Backend",
-        items: ["Python (Django, Flask)", "PHP"],
+        items: [
+          { name: "Python (Django, Flask)", level: "Intermédiaire" },
+          { name: "PHP", level: "Intermédiaire" },
+        ],
       },
       {
         name: "DevOps",
-        items: ["Docker", "Nginx", "GitHub Actions (CI)", "Linux"],
+        items: [
+          { name: "Docker", level: "Intermédiaire" },
+          { name: "Nginx", level: "Intermédiaire" },
+          { name: "GitHub Actions (CI)", level: "Intermédiaire" },
+          { name: "Linux, Bash", level: "Intermédiaire" },
+        ],
       },
       {
         name: "Outils",
-        items: ["Microsoft Project", "Git/GitHub", "Jenkins", "VS Code"],
+        items: [
+          { name: "Git/GitHub" },
+          { name: "Jenkins" },
+          { name: "GitHub Actions" },
+          { name: "VMWare" },
+          { name: "Windows Server" },
+          { name: "Active Directory" },
+          { name: "Microsoft Project" },
+          { name: "VS Code" },
+        ],
       },
       {
         name: "Réseaux",
-        items: ["GNS3", "Wireshark", "Cisco Packet Tracer"],
+        items: [
+          { name: "GNS3", level: "Intermédiaire" },
+          { name: "Wireshark", level: "Intermédiaire" },
+          { name: "Cisco Packet Tracer", level: "Intermédiaire" },
+        ],
       },
     ],
   },
@@ -89,7 +140,7 @@ export const content = {
       {
         name: "Gestion de notes étudiants",
         description:
-          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord, basée sur une structure MVC. Gestion multi-rôles : étudiant, professeur, administrateur. Fonctionnalités principales : inscription / connexion / déconnexion (sessions PHP), tableau de bord adapté au rôle, gestion des utilisateurs côté admin (ajout / modification / suppression), gestion des notes (enregistrement et consultation).",
+          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord, basée sur une structure MVC. Gestion multi-rôles : étudiant, professeur, administrateur. Fonctionnalités principales : inscription / connexion / déconnexion (sessions PHP), tableau de bord adapté au rôle, gestion des utilisateurs côté admin (ajout / modification / suppression), gestion des notes (enregistrement et consultation). Pour commencer utiliser l'identifiant admin@gmail.com, mdp : admin",
         tags: ["PHP", "MySQL"],
         links: {
           demo: "https://gestiondenotes.xo.je/views/auth/login.php",
@@ -105,6 +156,42 @@ export const content = {
           demo: "",
           repo: "https://github.com/miradojonas/Tohanasa",
         },
+      },
+    ],
+  },
+
+  formations: {
+    title: "Formations",
+    items: [
+      {
+        title: "Informatique — 2ème année (en cours)",
+        organization: "École Supérieure des Technologies de l’Information (ESTI)",
+        period: "En cours",
+        bullets: [
+          "Parcours orienté développement logiciel et bases systèmes.",
+        ],
+      },
+      {
+        title: "Baccalauréat Technologie Général Industriel(TGI)",
+        organization: "Collège Saint Michel Amparibe",
+        period: "2024-2025"
+      },
+      {
+        title: "Formation no-code",
+        organization: "Orange Digital Center",
+        period: "19 janvier 2026 - 23 janvier 2026",
+        bullets: [
+          "Découverte des outils no-code et prototypage rapide.",
+        ],
+      },
+      {
+        title: "Piscine 42",
+        organization: "42",
+        period: "Séptembre 2025",
+        bullets: [
+          "Immersion intensive: algorithmie, rigueur, autonomie, travail en équipe.",
+          "Approche par projets et peer-learning.",
+        ],
       },
     ],
   },

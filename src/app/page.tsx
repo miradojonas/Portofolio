@@ -1,6 +1,7 @@
 import { content } from "@/app/content";
 import styles from "./page.module.css";
 import RevealOnScroll from "./RevealOnScroll";
+import Image from "next/image";
 
 function Container({ children }: { children: React.ReactNode }) {
   return <div className={styles.container}>{children}</div>;
@@ -40,6 +41,9 @@ export default function Home() {
               <a className={styles.tap} href="#skills">
                 Compétences
               </a>
+              <a className={styles.tap} href="#formations">
+                Formations
+              </a>
               <a className={styles.tap} href="#projects">
                 Projets
               </a>
@@ -54,6 +58,32 @@ export default function Home() {
       <main id="top" className={styles.pageEnter}>
         <section className={styles.hero}>
           <Container>
+            <div className={styles.profileHeader}>
+              <div className={styles.profileAvatarWrap}>
+                <Image
+                  className={styles.profileAvatar}
+                  src={content.profile.image.src}
+                  alt={content.profile.image.alt}
+                  width={112}
+                  height={112}
+                  priority
+                />
+              </div>
+
+              <div className={styles.profileHeaderText}>
+                <p className={styles.profileName}>{content.site.name}</p>
+                <p className={styles.profileRole}>{content.site.title}</p>
+
+                <ul className={styles.profileDetails}>
+                  {content.profile.details.map((d) => (
+                    <li key={d.label} className={styles.badge}>
+                      {d.label} : {d.value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
             <p className={`${styles.kicker} ${styles.reveal} ${styles.reveal1}`}>
               {content.site.title}
             </p>
@@ -123,8 +153,9 @@ export default function Home() {
                     <h3 className={styles.h3}>{g.name}</h3>
                     <ul className={styles.list}>
                       {g.items.map((it) => (
-                        <li key={it} className={styles.badge}>
-                          {it}
+                        <li key={it.name} className={styles.badge}>
+                          {it.name}
+                          {"level" in it ? ` : ${it.level}` : ""}
                         </li>
                       ))}
                     </ul>
@@ -175,6 +206,31 @@ export default function Home() {
           </RevealOnScroll>
 
           <RevealOnScroll>
+            <Section id="formations" title={content.formations.title}>
+              <div className={styles.timeline}>
+                {content.formations.items.map((f) => (
+                  <div key={`${f.title}-${f.organization}`} className={styles.timelineItem}>
+                    <div className={styles.timelineLeft}>
+                      <div className={styles.timelineRole}>{f.title}</div>
+                      <div className={styles.timelineCompany}>{f.organization}</div>
+                      <div className={styles.timelinePeriod}>{f.period}</div>
+                    </div>
+                    {"bullets" in f ? (
+                      <ul className={styles.bullets}>
+                        {f.bullets.map((b) => (
+                          <li key={b} className={styles.p}>
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </Section>
+          </RevealOnScroll>
+
+          <RevealOnScroll>
             <Section id="contact" title={content.contact.title}>
               <p className={styles.p}>{content.contact.text}</p>
 
@@ -188,7 +244,7 @@ export default function Home() {
                 <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.linkedin}>
                   LinkedIn
                 </a>
-                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.linkedin}>
+                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.facebook}>
                   Facebook
                 </a>
               </div>
@@ -213,7 +269,7 @@ export default function Home() {
               <a className={styles.tap} href={`mailto:${content.links.email}`}>
                 Email
               </a>
-              <a className={styles.tap} href={`mailto:${content.links.email}`}>
+              <a className={styles.tap} href={content.links.facebook}>
                 Facebook
               </a>
             </span>
