@@ -118,8 +118,36 @@
   @apply border-b border-zinc-200 bg-gradient-to-b from-white to-zinc-50;
 }
 
+.profileHeader {
+  @apply flex flex-col gap-4 pt-10 md:flex-row md:items-center;
+}
+
+.profileAvatarWrap {
+  @apply h-28 w-28 overflow-hidden rounded-full border border-zinc-200 bg-white text-zinc-300;
+}
+
+.profileAvatar {
+  @apply h-full w-full object-cover;
+}
+
+.profileHeaderText {
+  @apply flex flex-col gap-2;
+}
+
+.profileName {
+  @apply text-base font-semibold text-zinc-900;
+}
+
+.profileRole {
+  @apply text-sm text-zinc-700;
+}
+
+.profileDetails {
+  @apply mt-2 flex flex-wrap gap-2;
+}
+
 .kicker {
-  @apply pt-10 text-sm font-medium tracking-wide text-zinc-600;
+  @apply pt-6 text-sm font-medium tracking-wide text-zinc-600;
 }
 
 .h1 {
