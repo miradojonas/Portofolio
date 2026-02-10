@@ -9,7 +9,7 @@ export const content = {
 
   profile: {
     image: {
-      src: "/profile.svg",
+      src: "/pdp.png",
       alt: "Photo de profil",
     },
     details: [
@@ -33,7 +33,7 @@ export const content = {
   hero: {
     headline: "Salut, moi c’est Mirado.",
     subheadline:
-      "Étudiant en informatique, je construis des projets concrets (web, backend, DevOps) et je cherche une alternance / un stage.",
+      "Étudiant en informatique, je construis des projets concrets (web, backend, DevOps) et je cherche une alternance / un stage pour approfondir mes connaissances.",
     ctas: [
       { label: "Voir mes projets", href: "#projects" },
       { label: "Me contacter", href: "#contact" },
@@ -106,9 +106,9 @@ export const content = {
       {
         name: "Réseaux",
         items: [
-          { name: "GNS3", level: "Intermédiaire" },
-          { name: "Wireshark", level: "Intermédiaire" },
-          { name: "Cisco Packet Tracer", level: "Intermédiaire" },
+          { name: "GNS3"},
+          { name: "Wireshark"},
+          { name: "Cisco Packet Tracer"},
         ],
       },
     ],
@@ -123,7 +123,7 @@ export const content = {
           "Description: Planify est une solution web qui centralise l’organisation scolaire (emploi du temps, calendrier, devoirs, messages et notifications) dans un seul espace. Elle évite la dispersion des infos et réduit les oublis grâce à un tableau de bord “ce qui compte aujourd’hui”. Les fonctionnalités s’adaptent au rôle (élève/prof/admin) pour que chacun ait les bons droits et les bonnes actions.",
         tags: ["Flask", "HTML/CSS/JS", "SQLite", "Docker + Docker compose"],
         links: {
-          demo: "https://planify-tau-seven.vercel.app/",
+          demo: "https://planify-1-axvl.onrender.com/login",
           repo: "https://github.com/miradojonas/Planify",
         },
       },
@@ -153,8 +153,17 @@ export const content = {
           "Tohanasa est une application web complète qui aide un utilisateur à organiser sa vie professionnelle et son apprentissage au même endroit. Elle propose l’inscription/connexion, un espace pour gérer son CV, consulter et publier des offres d’emploi, suivre des formations (documents/vidéos), et interagir via un module social. Un chatbot est aussi intégré pour guider l’utilisateur et répondre aux questions directement dans l’application.",
         tags: ["Django", "React.js", "SQLite", "API REST"],
         links: {
-          demo: "",
-          repo: "https://github.com/miradojonas/Tohanasa",
+          demo: "https://projet-110-frontend.vercel.app/",
+          repo: "https://github.com/miradojonas/Projet_110",
+        },
+      },
+      {
+        name: "Lamina (Bubble, No-code)(En cours)",
+        description: "Outils CRM pour mieux piloter les entreprises.",
+        tags: ["Bubble", "No-code"],
+        links: {
+          demo: "https://miradojonas11.bubbleapps.io/version-test?debug_mode=true",
+          repo: "",
         },
       },
     ],
