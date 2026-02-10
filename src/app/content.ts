@@ -26,7 +26,7 @@ export const content = {
     email: "miradojonas11@gmail.com",
     github: "https://github.com/miradojonas",
     linkedin: "https://www.linkedin.com/in/onjamirado-christian-jonas-ranaivohasivony-4195b036a/",
-    cv: "/cv/CV_de_Mirado.pdf",
+    cv: "/cv/CV_de_Mirado_v2.pdf",
     facebook : "https://web.facebook.com/MiRaDo.JoNaS?locale=fr_FR"
   },
 
