@@ -122,6 +122,7 @@ export const content = {
         description:
           "Description: Planify est une solution web qui centralise l’organisation scolaire (emploi du temps, calendrier, devoirs, messages et notifications) dans un seul espace. Elle évite la dispersion des infos et réduit les oublis grâce à un tableau de bord “ce qui compte aujourd’hui”. Les fonctionnalités s’adaptent au rôle (élève/prof/admin) pour que chacun ait les bons droits et les bonnes actions.",
         tags: ["Flask", "HTML/CSS/JS", "SQLite", "Docker + Docker compose"],
+        image: { src: "/Planify.png", alt: "Aperçu du projet Planify" },
         links: {
           demo: "https://planify-1-axvl.onrender.com/login",
           repo: "https://github.com/miradojonas/Planify",
@@ -132,6 +133,7 @@ export const content = {
         description:
           "Simulation d'une connectivité entre routeur et switch (configuration + tests de connectivité).",
         tags: ["Réseaux"],
+        image: { src: "/Cisco.png", alt: "Aperçu du projet Simulation Réseaux" },
         links: {
           demo: "",
           repo: "",
@@ -142,6 +144,7 @@ export const content = {
         description:
           "Application web de gestion de notes d’étudiants avec authentification et tableau de bord, basée sur une structure MVC. Gestion multi-rôles : étudiant, professeur, administrateur. Fonctionnalités principales : inscription / connexion / déconnexion (sessions PHP), tableau de bord adapté au rôle, gestion des utilisateurs côté admin (ajout / modification / suppression), gestion des notes (enregistrement et consultation). Pour commencer utiliser l'identifiant admin@gmail.com, mdp : admin",
         tags: ["PHP", "MySQL"],
+        image: { src: "/GED.png", alt: "Aperçu du projet Gestion de notes" },
         links: {
           demo: "https://gestiondenotes.xo.je/views/auth/login.php",
           repo: "https://github.com/miradojonas/Gestion-de-notes-etudiants",
@@ -152,6 +155,7 @@ export const content = {
         description:
           "Tohanasa est une application web complète qui aide un utilisateur à organiser sa vie professionnelle et son apprentissage au même endroit. Elle propose l’inscription/connexion, un espace pour gérer son CV, consulter et publier des offres d’emploi, suivre des formations (documents/vidéos), et interagir via un module social. Un chatbot est aussi intégré pour guider l’utilisateur et répondre aux questions directement dans l’application.",
         tags: ["Django", "React.js", "SQLite", "API REST"],
+        image: { src: "/Tohanasa.png", alt: "Aperçu du projet Tohanasia" },
         links: {
           demo: "https://projet-110-frontend.vercel.app/",
           repo: "https://github.com/miradojonas/Projet_110",
@@ -161,8 +165,19 @@ export const content = {
         name: "Lamina (Bubble, No-code)(En cours)",
         description: "Outils CRM pour mieux piloter les entreprises.",
         tags: ["Bubble", "No-code"],
+        image: { src: "/Lamina.png", alt: "Aperçu du projet Lamina" },
         links: {
           demo: "https://miradojonas11.bubbleapps.io/version-test?debug_mode=true",
+          repo: "",
+        },
+      },
+      {
+        name: "DataViz",
+        description: "",
+        tags: ["Data Visualization"],
+        image: { src: "/dashboard_2.jpg", alt: "Aperçu du projet DataViz" },
+        links: {
+          demo: "",
           repo: "",
         },
       },
@@ -191,6 +206,7 @@ export const content = {
         period: "19 janvier 2026 - 23 janvier 2026",
         bullets: [
           "Découverte des outils no-code et prototypage rapide.",
+          "Maitrise du logique des workflows, l'interface utilisateur et les fonctionnalités fondamentales.",
         ],
       },
       {
@@ -200,6 +216,16 @@ export const content = {
         bullets: [
           "Immersion intensive: algorithmie, rigueur, autonomie, travail en équipe.",
           "Approche par projets et peer-learning.",
+        ],
+      },
+      {
+        title: "Introduction à la data visualization",
+        organization: "Orange Digital Center Antananarivo",
+        period: "16 au 19 fevrier 2026",
+        bullets: [
+          "Acquisition des fondamentaux de la représentation visuelle des données",
+          "Maitrise des principaux types de graphiques",
+          "Bonnes pratiques pour transformer des données brutes en supports clairs, pertinants et impactantes pour aider les entreprises à prendre une décision."
         ],
       },
     ],

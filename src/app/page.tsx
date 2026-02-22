@@ -171,6 +171,16 @@ export default function Home() {
                 {content.projects.items.map((p) => (
                   <article key={p.name} className={styles.projectCard}>
                     <div>
+                      {p.image?.src ? (
+                        <div className={styles.projectImageWrap}>
+                          <Image
+                            src={p.image.src}
+                            alt={p.image?.alt ?? p.name}
+                            width={320}
+                            height={180}
+                          />
+                        </div>
+                      ) : null}
                       <h3 className={styles.h3}>{p.name}</h3>
                       <p className={styles.p}>{p.description}</p>
 
