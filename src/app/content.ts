@@ -173,7 +173,7 @@ export const content = {
       },
       {
         name: "DataViz",
-        description: "",
+        description: "Tableau de bord d'une entreprise pour visualiser et analyser les données pour mieux prendre des décisions.",
         tags: ["Data Visualization"],
         image: { src: "/dashboard_2.jpg", alt: "Aperçu du projet DataViz" },
         links: {

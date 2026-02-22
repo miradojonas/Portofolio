@@ -49,7 +49,7 @@
 }
 
 .tap:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid #6366F1;
   outline-offset: 3px;
 }
 
@@ -95,7 +95,7 @@
 }
 
 .header {
-  @apply border-b border-zinc-200 bg-white/80 backdrop-blur;
+  @apply sticky top-0 z-50 border-b border-slate-200/60 bg-white/70 backdrop-blur-xl;
 }
 
 .nav {
@@ -103,31 +103,37 @@
 }
 
 .brand {
-  @apply font-semibold text-zinc-900;
+  @apply text-lg font-bold;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .navLinks {
-  @apply hidden gap-5 text-sm text-zinc-700 md:flex;
+  @apply hidden gap-6 text-sm font-medium text-slate-600 md:flex;
 }
 
 .navLinks a {
-  @apply hover:text-zinc-900;
+  @apply transition-colors hover:text-indigo-600;
 }
 
 .hero {
-  @apply border-b border-zinc-200 bg-gradient-to-b from-white to-zinc-50;
+  @apply relative overflow-hidden border-b border-slate-200/60;
+  background: linear-gradient(135deg, #EEF2FF 0%, #F8FAFC 40%, #ECFEFF 100%);
 }
 
 .profileHeader {
-  @apply flex flex-col gap-4 pt-10 md:flex-row md:items-center;
+  @apply flex flex-col gap-5 pt-12 md:flex-row md:items-center;
 }
 
 .profileAvatarWrap {
-  @apply h-28 w-28 overflow-hidden rounded-full border border-zinc-200 bg-white text-zinc-300;
+  @apply h-28 w-28 overflow-hidden rounded-full p-[3px];
+  background: linear-gradient(135deg, #6366F1, #8B5CF6, #06B6D4);
 }
 
 .profileAvatar {
-  @apply h-full w-full object-cover;
+  @apply h-full w-full rounded-full object-cover;
 }
 
 .profileHeaderText {
@@ -135,11 +141,11 @@
 }
 
 .profileName {
-  @apply text-base font-semibold text-zinc-900;
+  @apply text-lg font-bold text-slate-800;
 }
 
 .profileRole {
-  @apply text-sm text-zinc-700;
+  @apply text-sm font-medium text-indigo-600;
 }
 
 .profileDetails {
@@ -147,15 +153,15 @@
 }
 
 .kicker {
-  @apply pt-6 text-sm font-medium tracking-wide text-zinc-600;
+  @apply pt-8 text-sm font-semibold uppercase tracking-wider text-indigo-600;
 }
 
 .h1 {
-  @apply mt-2 text-3xl font-semibold leading-tight text-zinc-900 md:text-5xl;
+  @apply mt-3 text-3xl font-extrabold leading-tight text-slate-900 md:text-5xl;
 }
 
 .lead {
-  @apply mt-4 max-w-2xl pb-6 text-base leading-relaxed text-zinc-700 md:text-lg;
+  @apply mt-4 max-w-2xl pb-8 text-base leading-relaxed text-slate-600 md:text-lg;
 }
 
 .ctas {
@@ -163,31 +169,41 @@
 }
 
 .button {
-  @apply inline-flex items-center justify-center rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800;
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.25);
+}
+
+.button:hover {
+  box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.35);
 }
 
 .buttonGhost {
-  @apply inline-flex items-center justify-center rounded-md border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 hover:bg-zinc-50;
+  @apply inline-flex items-center justify-center rounded-xl border-2 border-indigo-200 bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition-all hover:border-indigo-300 hover:bg-indigo-50;
 }
 
 .metaRow {
-  @apply flex flex-wrap items-center gap-2 pb-10 text-sm text-zinc-600;
+  @apply flex flex-wrap items-center gap-2 pb-12 text-sm text-slate-500;
+}
+
+.metaRow a {
+  @apply text-indigo-600 transition-colors hover:text-indigo-800;
 }
 
 .section {
-  @apply py-10;
+  @apply py-12;
 }
 
 .h2 {
-  @apply mb-6 text-xl font-semibold text-zinc-900 md:text-2xl;
+  @apply mb-8 text-2xl font-bold text-slate-800 md:text-3xl;
 }
 
 .h3 {
-  @apply text-base font-semibold text-zinc-900;
+  @apply text-base font-bold text-slate-800;
 }
 
 .p {
-  @apply text-sm leading-relaxed text-zinc-700 md:text-base;
+  @apply text-sm leading-relaxed text-slate-600 md:text-base;
 }
 
 .twoCols {
@@ -203,23 +219,23 @@
 }
 
 .card {
-  @apply rounded-lg border border-zinc-200 bg-white p-4;
+  @apply rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-indigo-200;
 }
 
 .cardLabel {
-  @apply text-xs font-medium uppercase tracking-wide text-zinc-500;
+  @apply text-xs font-semibold uppercase tracking-wider text-indigo-500;
 }
 
 .cardValue {
-  @apply mt-1 text-sm font-medium text-zinc-900;
+  @apply mt-1 text-sm font-semibold text-slate-800;
 }
 
 .grid3 {
-  @apply grid gap-4 md:grid-cols-3;
+  @apply grid gap-5 md:grid-cols-3;
 }
 
 .panel {
-  @apply rounded-lg border border-zinc-200 bg-white p-4;
+  @apply rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-indigo-200;
 }
 
 .list {
@@ -227,15 +243,31 @@
 }
 
 .badge {
-  @apply rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-800;
+  @apply rounded-full px-3 py-1 text-xs font-semibold;
+  background: linear-gradient(135deg, #EEF2FF, #F0F9FF);
+  color: #4338CA;
+  border: 1px solid #C7D2FE;
 }
 
 .grid2 {
-  @apply grid gap-4 md:grid-cols-2;
+  @apply grid gap-5 md:grid-cols-2;
 }
 
 .projectCard {
-  @apply flex flex-col justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-5;
+  @apply flex flex-col justify-between gap-4 rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-indigo-200;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-2px);
+}
+
+.projectImageWrap {
+  @apply mb-3 overflow-hidden rounded-lg;
+}
+
+.projectImageWrap img {
+  @apply w-full transition-transform duration-300 hover:scale-105;
 }
 
 .tagRow {
@@ -243,7 +275,10 @@
 }
 
 .tag {
-  @apply rounded-md bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-800;
+  @apply rounded-md px-2.5 py-1 text-xs font-semibold;
+  background: linear-gradient(135deg, #ECFDF5, #F0FDFA);
+  color: #065F46;
+  border: 1px solid #A7F3D0;
 }
 
 .projectLinks {
@@ -251,11 +286,16 @@
 }
 
 .link {
-  @apply font-medium text-zinc-900 underline underline-offset-4 hover:text-zinc-700;
+  @apply font-semibold text-indigo-600 underline underline-offset-4 transition-colors hover:text-indigo-800;
+  text-decoration-color: #A5B4FC;
+}
+
+.link:hover {
+  text-decoration-color: #6366F1;
 }
 
 .linkMuted {
-  @apply text-zinc-400;
+  @apply text-slate-300;
 }
 
 .timeline {
@@ -263,23 +303,26 @@
 }
 
 .timelineItem {
-  @apply grid gap-4 rounded-lg border border-zinc-200 bg-white p-5 md:grid-cols-[220px_1fr];
+  @apply grid gap-4 rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-indigo-200 md:grid-cols-[220px_1fr];
 }
 
 .timelineLeft {
-  @apply flex flex-col gap-1;
+  @apply flex flex-col gap-1.5;
 }
 
 .timelineRole {
-  @apply text-sm font-semibold text-zinc-900;
+  @apply text-sm font-bold text-slate-800;
 }
 
 .timelineCompany {
-  @apply text-sm text-zinc-700;
+  @apply text-sm font-medium text-indigo-600;
 }
 
 .timelinePeriod {
-  @apply text-xs text-zinc-500;
+  @apply inline-flex w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  background-color: #FFFBEB;
+  color: #B45309;
+  border: 1px solid #FDE68A;
 }
 
 .bullets {
@@ -287,17 +330,22 @@
 }
 
 .contactRow {
-  @apply mt-5 flex flex-wrap gap-3;
+  @apply mt-6 flex flex-wrap gap-3;
 }
 
 .footer {
-  @apply border-t border-zinc-200 bg-white;
+  @apply mt-12 border-t border-slate-800;
+  background: linear-gradient(to bottom, #1E293B, #0F172A);
 }
 
 .footerRow {
-  @apply flex flex-col gap-3 py-8 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between;
+  @apply flex flex-col gap-3 py-10 text-sm text-slate-400 md:flex-row md:items-center md:justify-between;
 }
 
 .footerLinks {
-  @apply flex gap-4;
+  @apply flex gap-5;
+}
+
+.footerLinks a {
+  @apply text-slate-400 transition-colors hover:text-indigo-400;
 }
