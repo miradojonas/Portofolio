@@ -67,7 +67,6 @@ export const content = {
       {
         name: "Frontend",
         items: [
-          { name: "Next.js", level: "Débutant" },
           { name: "React", level: "Débutant" },
           { name: "TypeScript", level: "Débutant" },
           { name: "CSS", level: "Intermédiaire" },
@@ -84,9 +83,9 @@ export const content = {
       {
         name: "DevOps",
         items: [
-          { name: "Docker", level: "Intermédiaire" },
-          { name: "Nginx", level: "Intermédiaire" },
-          { name: "GitHub Actions (CI)", level: "Intermédiaire" },
+          { name: "Docker", level: "Débutant" },
+          { name: "Nginx", level: "Débutant" },
+          { name: "GitHub Actions (CI)", level: "Débutant" },
           { name: "Linux, Bash", level: "Intermédiaire" },
         ],
       },
@@ -97,10 +96,9 @@ export const content = {
           { name: "Jenkins" },
           { name: "GitHub Actions" },
           { name: "VMWare" },
-          { name: "Windows Server" },
-          { name: "Active Directory" },
           { name: "Microsoft Project" },
           { name: "VS Code" },
+          { name : "Power BI"}
         ],
       },
       {
@@ -109,6 +107,8 @@ export const content = {
           { name: "GNS3"},
           { name: "Wireshark"},
           { name: "Cisco Packet Tracer"},
+          { name : "Active Directory"},
+          { name : "Windows Server"},
         ],
       },
     ],
