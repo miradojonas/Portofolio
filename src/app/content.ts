@@ -107,7 +107,7 @@ export const content = {
           { name: "GNS3"},
           { name: "Wireshark"},
           { name: "Cisco Packet Tracer"},
-          { name : "Active Directory"},
+          { name : "Active Directory / GPO"},
           { name : "Windows Server"},
         ],
       },
@@ -221,7 +221,7 @@ export const content = {
       {
         title: "Introduction à la data visualization",
         organization: "Orange Digital Center Antananarivo",
-        period: "16 au 19 fevrier 2026",
+        period: "16 au 19 février 2026",
         bullets: [
           "Acquisition des fondamentaux de la représentation visuelle des données",
           "Maitrise des principaux types de graphiques",
