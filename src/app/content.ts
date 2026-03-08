@@ -129,7 +129,7 @@ export const content = {
         },
       },
       {
-        name: "Simulation d'une connectivité entre Routeur et Switch",
+        name: "Simulation d'une connectivité entre PC et Switch",
         description:
           "Simulation d'une connectivité entre switch et pc utilisateur(configuration + tests de connectivité).",
         tags: ["Réseaux"],
