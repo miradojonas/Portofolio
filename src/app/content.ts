@@ -131,7 +131,7 @@ export const content = {
       {
         name: "Simulation d'une connectivité entre Routeur et Switch",
         description:
-          "Simulation d'une connectivité entre routeur et switch (configuration + tests de connectivité).",
+          "Simulation d'une connectivité entre switch et pc utilisateur(configuration + tests de connectivité).",
         tags: ["Réseaux"],
         image: { src: "/Cisco.png", alt: "Aperçu du projet Simulation Réseaux" },
         links: {
