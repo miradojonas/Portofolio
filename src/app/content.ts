@@ -181,6 +181,18 @@ export const content = {
           repo: "",
         },
       },
+      {
+        name: "Mise en place d'une infrastructure Active Directory",
+        description:
+          "Déploiement et configuration d'une infrastructure Active Directory sous Windows Server : installation du rôle AD DS, création d'un domaine, gestion des utilisateurs et des groupes, mise en place de stratégies de groupe (GPO), et intégration de postes clients au domaine.",
+        tags: ["Windows Server", "Active Directory", "GPO", "DNS", "DHCP"],
+        image: { src: "/Active Directory.png", alt: "Aperçu du projet Active Directory" },
+        links: {
+          demo: "",
+          repo: "",
+          report: "/RAPPORT-DE-PROJET.pdf",
+        },
+      },
     ],
   },
 

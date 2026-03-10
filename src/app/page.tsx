@@ -208,6 +208,11 @@ export default function Home() {
                       ) : (
                         <span className={styles.linkMuted}>Code</span>
                       )}
+                      {"report" in p.links && p.links.report ? (
+                        <a className={`${styles.link} ${styles.tap}`} href={p.links.report}>
+                          Rapport
+                        </a>
+                      ) : null}
                     </div>
                   </article>
                 ))}
