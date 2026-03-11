@@ -182,6 +182,17 @@ export const content = {
         },
       },
       {
+        name: "Agri-Markeplace (En cours)",
+        description:
+          "Plateforme de commerce pour faciliter les rencontres entre producteurs et consommateurs.",
+        tags: ["Laravel", "MySQL", "USSD(Africa's Talking)"],
+        image: { src: "/Agri-Markeplace.png", alt: "Aperçu du projet Agri-Markeplace" },
+        links: {
+          demo: "",
+          repo: "",
+        },
+      },
+      {
         name: "Mise en place d'une infrastructure Active Directory",
         description:
           "Déploiement et configuration d'une infrastructure Active Directory sous Windows Server : installation du rôle AD DS, création d'un domaine, gestion des utilisateurs et des groupes, mise en place de stratégies de groupe (GPO), et intégration de postes clients au domaine.",
