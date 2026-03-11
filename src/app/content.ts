@@ -16,7 +16,7 @@ export const content = {
       { label: "Localisation", value: "Antananarivo, Madagascar" },
       {
         label: "Objectif",
-        value: "Alternance / stage (DevOps / AdminSys / Backend)",
+        value: "Alternance (DevOps / AdminSys / Backend)",
       },
       { label: "Email", value: "miradojonas11@gmail.com" },
     ],
