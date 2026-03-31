@@ -26,12 +26,15 @@ function Section({
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.appShell}>
+      <div className={styles.gridBackdrop} aria-hidden="true" />
+      <div className={styles.floatingGlow} aria-hidden="true" />
+
       <header className={styles.header}>
         <Container>
           <nav className={styles.nav}>
             <a className={`${styles.brand} ${styles.tap}`} href="#top">
-              {content.site.name}
+              Portfolio
             </a>
 
             <div className={styles.navLinks}>
@@ -58,19 +61,70 @@ export default function Home() {
       <main id="top" className={styles.pageEnter}>
         <section className={styles.hero}>
           <Container>
-            <div className={styles.profileHeader}>
-              <div className={styles.profileAvatarWrap}>
-                <Image
-                  className={styles.profileAvatar}
-                  src={content.profile.image.src}
-                  alt={content.profile.image.alt}
-                  width={112}
-                  height={112}
-                  priority
-                />
+            <div className={styles.heroGrid}>
+              <div>
+                <p className={styles.heroGhost}>PORTFOLIO</p>
+
+                <p className={`${styles.kicker} ${styles.reveal} ${styles.reveal1}`}>
+                  {content.site.title}
+                </p>
+                <h1 className={`${styles.h1} ${styles.reveal} ${styles.reveal2}`}>
+                  {content.hero.headline}
+                </h1>
+                <p className={`${styles.lead} ${styles.reveal} ${styles.reveal3}`}>
+                  {content.hero.subheadline}
+                </p>
+
+                <div className={`${styles.ctas} ${styles.reveal} ${styles.reveal4}`}>
+                  {content.hero.ctas.map((cta) => (
+                    <a
+                      key={cta.href}
+                      className={`${styles.button} ${styles.tap}`}
+                      href={cta.href}
+                    >
+                      {cta.label}
+                    </a>
+                  ))}
+                  {content.links.cv ? (
+                    <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.cv}>
+                      Télécharger le CV
+                    </a>
+                  ) : null}
+                </div>
+
+                <div className={styles.metaRow}>
+                  <span>{content.site.location}</span>
+                  <span>•</span>
+                  <a className={styles.tap} href={`mailto:${content.links.email}`}>
+                    {content.links.email}
+                  </a>
+                </div>
+
+                <div className={styles.sideLinks}>
+                  <a className={`${styles.sideLink} ${styles.tap}`} href={content.links.github}>
+                    GitHub
+                  </a>
+                  <a className={`${styles.sideLink} ${styles.tap}`} href={content.links.linkedin}>
+                    LinkedIn
+                  </a>
+                  <a className={`${styles.sideLink} ${styles.tap}`} href={content.links.facebook}>
+                    Facebook
+                  </a>
+                </div>
               </div>
 
-              <div className={styles.profileHeaderText}>
+              <div className={styles.heroCard}>
+                <div className={styles.profileAvatarWrap}>
+                  <Image
+                    className={styles.profileAvatar}
+                    src={content.profile.image.src}
+                    alt={content.profile.image.alt}
+                    width={220}
+                    height={220}
+                    priority
+                  />
+                </div>
+
                 <p className={styles.profileName}>{content.site.name}</p>
                 <p className={styles.profileRole}>{content.site.title}</p>
 
@@ -83,48 +137,14 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-
-            <p className={`${styles.kicker} ${styles.reveal} ${styles.reveal1}`}>
-              {content.site.title}
-            </p>
-            <h1 className={`${styles.h1} ${styles.reveal} ${styles.reveal2}`}>
-              {content.hero.headline}
-            </h1>
-            <p className={`${styles.lead} ${styles.reveal} ${styles.reveal3}`}>
-              {content.hero.subheadline}
-            </p>
-
-            <div className={`${styles.ctas} ${styles.reveal} ${styles.reveal4}`}>
-              {content.hero.ctas.map((cta) => (
-                <a
-                  key={cta.href}
-                  className={`${styles.button} ${styles.tap}`}
-                  href={cta.href}
-                >
-                  {cta.label}
-                </a>
-              ))}
-              {content.links.cv ? (
-                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.cv}>
-                  Télécharger le CV
-                </a>
-              ) : null}
-            </div>
-
-            <div className={styles.metaRow}>
-              <span>{content.site.location}</span>
-              <span>•</span>
-              <a className={styles.tap} href={`mailto:${content.links.email}`}>
-                {content.links.email}
-              </a>
-            </div>
           </Container>
         </section>
 
         <Container>
+          <div className={styles.sectionsStack}>
           <RevealOnScroll>
             <Section id="about" title={content.about.title}>
-              <div className={styles.twoCols}>
+              <div className={styles.aboutGrid}>
                 <div className={styles.stack}>
                   {content.about.paragraphs.map((p) => (
                     <p key={p} className={styles.p}>
@@ -133,7 +153,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <ul className={styles.cardList}>
+                <ul className={styles.highlightGrid}>
                   {content.about.highlights.map((h) => (
                     <li key={h.label} className={styles.card}>
                       <div className={styles.cardLabel}>{h.label}</div>
@@ -147,9 +167,9 @@ export default function Home() {
 
           <RevealOnScroll>
             <Section id="skills" title={content.skills.title}>
-              <div className={styles.grid3}>
+              <div className={styles.skillsGrid}>
                 {content.skills.groups.map((g) => (
-                  <div key={g.name} className={styles.panel}>
+                  <div key={g.name} className={styles.skillPanel}>
                     <h3 className={styles.h3}>{g.name}</h3>
                     <ul className={styles.list}>
                       {g.items.map((it) => (
@@ -167,7 +187,7 @@ export default function Home() {
 
           <RevealOnScroll>
             <Section id="projects" title={content.projects.title}>
-              <div className={styles.grid2}>
+              <div className={styles.projectsGrid}>
                 {content.projects.items.map((p) => (
                   <article key={p.name} className={styles.projectCard}>
                     <div>
@@ -247,24 +267,27 @@ export default function Home() {
 
           <RevealOnScroll>
             <Section id="contact" title={content.contact.title}>
-              <p className={styles.p}>{content.contact.text}</p>
+              <div className={styles.contactCard}>
+                <p className={styles.contactText}>{content.contact.text}</p>
 
-              <div className={styles.contactRow}>
-                <a className={`${styles.button} ${styles.tap}`} href={`mailto:${content.links.email}`}>
-                  Envoyer un email
-                </a>
-                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.github}>
-                  GitHub
-                </a>
-                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.linkedin}>
-                  LinkedIn
-                </a>
-                <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.facebook}>
-                  Facebook
-                </a>
+                <div className={styles.contactRow}>
+                  <a className={`${styles.button} ${styles.tap}`} href={`mailto:${content.links.email}`}>
+                    Envoyer un email
+                  </a>
+                  <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.github}>
+                    GitHub
+                  </a>
+                  <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.linkedin}>
+                    LinkedIn
+                  </a>
+                  <a className={`${styles.buttonGhost} ${styles.tap}`} href={content.links.facebook}>
+                    Facebook
+                  </a>
+                </div>
               </div>
             </Section>
           </RevealOnScroll>
+          </div>
         </Container>
       </main>
 
@@ -291,6 +314,6 @@ export default function Home() {
           </div>
         </Container>
       </footer>
-    </>
+    </div>
   );
 }

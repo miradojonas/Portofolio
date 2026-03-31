@@ -1,7 +1,7 @@
 export const content = {
   site: {
     name: "RANAIVOHASIVONY Onjamirado Christian Jonas",
-    title: "Futur DevOps / AdminSys / Backend développeur",
+    title: "Futur développeur DevOps / AdminSys / Backend",
     description:
       "Je construis des applications web, accessibles et maintenables.",
     location: "Madagascar",
@@ -27,7 +27,7 @@ export const content = {
     github: "https://github.com/miradojonas",
     linkedin: "https://www.linkedin.com/in/onjamirado-christian-jonas-ranaivohasivony-4195b036a/",
     cv: "/cv/CV_Mirado.pdf",
-    facebook : "https://web.facebook.com/MiRaDo.JoNaS?locale=fr_FR"
+    facebook: "https://web.facebook.com/MiRaDo.JoNaS?locale=fr_FR"
   },
 
   hero: {
@@ -43,8 +43,8 @@ export const content = {
   about: {
     title: "À propos",
     paragraphs: [
-      "Actuellement en 2ème année à l’École Supérieure des Technologies de l’Information, je vise un parcours DevOps / AdminSys / backend.",
-      "J’aime comprendre tout le cycle: conception, développement, déploiement, et je progresse en continu via des projets et des formations.",
+      "Actuellement en 2e année à l’École Supérieure des Technologies de l’Information, je vise un parcours DevOps / AdminSys / backend.",
+      "J’aime comprendre tout le cycle : conception, développement, déploiement, et je progresse en continu via des projets et des formations.",
     ],
     highlights: [
       { label: "Intérêts", value: "Jeu vidéo, billard, football" },
@@ -56,7 +56,7 @@ export const content = {
     title: "Compétences",
     groups: [
       {
-        name : "Langage de programmation",
+        name: "Langages de programmation",
         items : [
           { name: "C", level: "Intermédiaire" },
           { name: "Python", level: "Intermédiaire" },
@@ -98,7 +98,8 @@ export const content = {
           { name: "VMWare" },
           { name: "Microsoft Project" },
           { name: "VS Code" },
-          { name : "Power BI"}
+          { name : "Power BI"},
+          { name : "n8n"}
         ],
       },
       {
@@ -131,7 +132,7 @@ export const content = {
       {
         name: "Simulation d'une connectivité entre PC et Switch",
         description:
-          "Simulation d'une connectivité entre switch et pc utilisateur(configuration + tests de connectivité).",
+          "Simulation d'une connectivité entre un switch et un PC utilisateur (configuration + tests de connectivité).",
         tags: ["Réseaux"],
         image: { src: "/Cisco.png", alt: "Aperçu du projet Simulation Réseaux" },
         links: {
@@ -140,9 +141,9 @@ export const content = {
         },
       },
       {
-        name: "Gestion de notes étudiants",
+        name: "Gestion des notes d’étudiants",
         description:
-          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord, basée sur une structure MVC. Gestion multi-rôles : étudiant, professeur, administrateur. Fonctionnalités principales : inscription / connexion / déconnexion (sessions PHP), tableau de bord adapté au rôle, gestion des utilisateurs côté admin (ajout / modification / suppression), gestion des notes (enregistrement et consultation). Pour commencer utiliser l'identifiant admin@gmail.com, mdp : admin",
+          "Application web de gestion de notes d’étudiants avec authentification et tableau de bord, basée sur une structure MVC. Gestion multi-rôles : étudiant, professeur, administrateur. Fonctionnalités principales : inscription / connexion / déconnexion (sessions PHP), tableau de bord adapté au rôle, gestion des utilisateurs côté admin (ajout / modification / suppression), gestion des notes (enregistrement et consultation). Pour commencer, utilisez l'identifiant admin@gmail.com, mot de passe : admin",
         tags: ["PHP", "MySQL"],
         image: { src: "/GED.png", alt: "Aperçu du projet Gestion de notes" },
         links: {
@@ -155,7 +156,7 @@ export const content = {
         description:
           "Tohanasa est une application web complète qui aide un utilisateur à organiser sa vie professionnelle et son apprentissage au même endroit. Elle propose l’inscription/connexion, un espace pour gérer son CV, consulter et publier des offres d’emploi, suivre des formations (documents/vidéos), et interagir via un module social. Un chatbot est aussi intégré pour guider l’utilisateur et répondre aux questions directement dans l’application.",
         tags: ["Django", "React.js", "SQLite", "API REST"],
-        image: { src: "/Tohanasa.png", alt: "Aperçu du projet Tohanasia" },
+        image: { src: "/Tohanasa.png", alt: "Aperçu du projet Tohan'asa" },
         links: {
           demo: "https://projet-110-frontend.vercel.app/",
           repo: "https://github.com/miradojonas/Projet_110",
@@ -182,11 +183,11 @@ export const content = {
         },
       },
       {
-        name: "Agri-Markeplace (En cours)",
+        name: "Agri-Marketplace (En cours)",
         description:
           "Plateforme de commerce pour faciliter les rencontres entre producteurs et consommateurs.",
         tags: ["Laravel", "MySQL", "USSD(Africa's Talking)"],
-        image: { src: "/Agri-Markeplace.png", alt: "Aperçu du projet Agri-Markeplace" },
+        image: { src: "/Agri-Markeplace.png", alt: "Aperçu du projet Agri-Marketplace" },
         links: {
           demo: "",
           repo: "",
@@ -211,7 +212,7 @@ export const content = {
     title: "Formations",
     items: [
       {
-        title: "Informatique — 2ème année (en cours)",
+        title: "Informatique — 2e année (en cours)",
         organization: "École Supérieure des Technologies de l’Information (ESTI)",
         period: "En cours",
         bullets: [
@@ -219,7 +220,7 @@ export const content = {
         ],
       },
       {
-        title: "Baccalauréat Technologie Général Industriel(TGI)",
+        title: "Baccalauréat technologique général industriel (TGI)",
         organization: "Collège Saint Michel Amparibe",
         period: "2024-2025"
       },
@@ -229,15 +230,15 @@ export const content = {
         period: "19 janvier 2026 - 23 janvier 2026",
         bullets: [
           "Découverte des outils no-code et prototypage rapide.",
-          "Maitrise du logique des workflows, l'interface utilisateur et les fonctionnalités fondamentales.",
+          "Maîtrise de la logique des workflows, de l'interface utilisateur et des fonctionnalités fondamentales.",
         ],
       },
       {
         title: "Piscine 42",
         organization: "42",
-        period: "Séptembre 2025",
+        period: "Septembre 2025",
         bullets: [
-          "Immersion intensive: algorithmie, rigueur, autonomie, travail en équipe.",
+          "Immersion intensive : algorithmie, rigueur, autonomie, travail en équipe.",
           "Approche par projets et peer-learning.",
         ],
       },
@@ -246,9 +247,9 @@ export const content = {
         organization: "Orange Digital Center Antananarivo",
         period: "16 au 19 février 2026",
         bullets: [
-          "Acquisition des fondamentaux de la représentation visuelle des données",
-          "Maitrise des principaux types de graphiques",
-          "Bonnes pratiques pour transformer des données brutes en supports clairs, pertinants et impactantes pour aider les entreprises à prendre une décision."
+          "Acquisition des fondamentaux de la représentation visuelle des données.",
+          "Maîtrise des principaux types de graphiques.",
+          "Bonnes pratiques pour transformer des données brutes en supports clairs, pertinents et impactants pour aider les entreprises à prendre des décisions."
         ],
       },
     ],
