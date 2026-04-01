@@ -12,7 +12,17 @@ function isValidEmail(email: string) {
 
 export async function POST(req: NextRequest) {
   try {
-    const body = (await req.json()) as Partial<Payload>;
+    const raw = await req.text();
+    if (!raw) {
+      return NextResponse.json({ error: "Body vide" }, { status: 400 });
+    }
+
+    let body: Partial<Payload>;
+    try {
+      body = JSON.parse(raw) as Partial<Payload>;
+    } catch {
+      return NextResponse.json({ error: "JSON invalide", raw }, { status: 400 });
+    }
 
     const name = body.name?.trim();
     const email = body.email?.trim();
