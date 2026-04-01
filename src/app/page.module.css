@@ -333,6 +333,65 @@
   @apply mt-6 flex flex-wrap gap-3;
 }
 
+.contactForm {
+  @apply mt-7 rounded-xl border p-4 md:p-5;
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(2, 6, 23, 0.35);
+}
+
+.formTitle {
+  @apply mb-3 text-sm font-semibold uppercase tracking-wider;
+  color: #c7d2fe;
+}
+
+.formGrid {
+  @apply grid gap-3 md:grid-cols-2;
+}
+
+.formField {
+  @apply mb-3 flex flex-col gap-1.5 text-sm;
+  color: #cbd5e1;
+}
+
+.formField input,
+.formField textarea {
+  @apply rounded-lg border px-3 py-2 text-sm;
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #e2e8f0;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.formField input::placeholder,
+.formField textarea::placeholder {
+  color: #94a3b8;
+}
+
+.formField input:focus,
+.formField textarea:focus {
+  outline: 2px solid rgba(99, 102, 241, 0.75);
+  outline-offset: 0;
+  border-color: rgba(129, 140, 248, 0.7);
+}
+
+.submitButton {
+  @apply mt-1;
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.formSuccess {
+  @apply mt-3 text-sm font-medium;
+  color: #86efac;
+}
+
+.formError {
+  @apply mt-3 text-sm font-medium;
+  color: #fca5a5;
+}
+
 .footer {
   @apply mt-12 border-t border-slate-800;
   background: linear-gradient(to bottom, #1E293B, #0F172A);
