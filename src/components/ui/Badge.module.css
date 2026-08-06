@@ -1,0 +1,8 @@
+@reference "../../app/globals.css";
+
+.badge {
+  @apply rounded-full border px-3 py-1 text-xs font-semibold;
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #c7d2fe;
+  background: rgba(55, 48, 163, 0.22);
+}

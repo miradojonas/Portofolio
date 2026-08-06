@@ -1,0 +1,24 @@
+@reference "../../app/globals.css";
+
+.contactCard {
+  @apply rounded-2xl border p-6;
+  border-color: rgba(148, 163, 184, 0.2);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(59, 130, 246, 0.2), transparent 44%),
+    rgba(15, 23, 42, 0.58);
+}
+
+.contactText {
+  @apply text-base leading-relaxed;
+  color: #cbd5e1;
+}
+
+.contactRow {
+  @apply mt-6 flex flex-wrap gap-3;
+}
+
+@media (max-width: 768px) {
+  .contactCard {
+    @apply rounded-xl p-4;
+  }
+}

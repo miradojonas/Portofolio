@@ -1,0 +1,89 @@
+@reference "../../app/globals.css";
+
+.timeline {
+  @apply relative flex flex-col gap-4;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(96, 165, 250, 0.65), rgba(148, 163, 184, 0.2));
+}
+
+.timelineItem {
+  @apply relative ml-7 grid gap-4 rounded-xl border p-5 md:grid-cols-[220px_1fr];
+  border-color: rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.52);
+}
+
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+}
+
+.timelineLeft {
+  @apply flex flex-col gap-1.5;
+}
+
+.timelineRole {
+  @apply text-sm font-bold;
+  color: #f8fafc;
+}
+
+.timelineCompany {
+  @apply text-sm font-medium;
+  color: #93c5fd;
+}
+
+.timelinePeriod {
+  @apply mt-1 inline-flex w-fit rounded-full border px-2.5 py-0.5 text-xs font-semibold;
+  border-color: rgba(252, 211, 77, 0.36);
+  color: #fcd34d;
+  background: rgba(120, 53, 15, 0.3);
+}
+
+.bullets {
+  @apply list-disc space-y-2 pl-5;
+}
+
+.p {
+  @apply text-sm leading-relaxed md:text-base;
+  color: #94a3b8;
+}
+
+@media (max-width: 1024px) {
+  .timelineItem {
+    @apply md:grid-cols-1;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    @apply pl-0;
+  }
+
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timelineItem {
+    @apply ml-4 rounded-xl p-4;
+  }
+
+  .timelineItem::before {
+    left: -14px;
+    width: 8px;
+    height: 8px;
+  }
+}

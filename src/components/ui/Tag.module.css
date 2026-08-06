@@ -1,0 +1,8 @@
+@reference "../../app/globals.css";
+
+.tag {
+  @apply rounded-md border px-2.5 py-1 text-xs font-semibold;
+  border-color: rgba(45, 212, 191, 0.3);
+  color: #99f6e4;
+  background: rgba(17, 94, 89, 0.28);
+}

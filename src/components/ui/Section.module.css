@@ -1,0 +1,25 @@
+@reference "../../app/globals.css";
+
+.section {
+  @apply mt-10 rounded-2xl p-6 md:p-8;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.65), rgba(10, 15, 37, 0.78));
+  box-shadow: 0 16px 34px rgba(2, 6, 23, 0.26);
+}
+
+.h2 {
+  @apply mb-7 text-2xl font-extrabold md:text-3xl;
+  color: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .section {
+    @apply rounded-xl p-4;
+  }
+}
+
+@media (max-width: 420px) {
+  .h2 {
+    @apply text-xl;
+  }
+}

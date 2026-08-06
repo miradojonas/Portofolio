@@ -1,0 +1,11 @@
+@reference "../../app/globals.css";
+
+.container {
+  @apply mx-auto w-full max-w-6xl px-4;
+}
+
+@media (max-width: 768px) {
+  .container {
+    @apply px-3;
+  }
+}

@@ -1,0 +1,205 @@
+@reference "../../app/globals.css";
+
+.hero {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  background: transparent;
+}
+
+.heroGrid {
+  @apply grid gap-10 py-14 md:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center;
+}
+
+.heroGrid > * {
+  min-width: 0;
+}
+
+.heroGhost {
+  margin: 0;
+  line-height: 0.88;
+  letter-spacing: 0.03em;
+  font-size: clamp(3.4rem, 15vw, 11rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(148, 163, 184, 0.24);
+  opacity: 0.44;
+  user-select: none;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.kicker {
+  @apply mt-4 text-xs font-semibold uppercase tracking-[0.22em];
+  color: #60a5fa;
+}
+
+.h1 {
+  @apply mt-4 max-w-3xl text-3xl font-black leading-tight md:text-5xl;
+  color: #f8fafc;
+}
+
+.lead {
+  @apply mt-5 max-w-2xl text-sm leading-relaxed md:text-lg;
+  color: #94a3b8;
+}
+
+.ctas {
+  @apply mt-8 flex flex-wrap gap-3;
+}
+
+.metaRow {
+  @apply mt-5 flex flex-wrap items-center gap-2 text-sm;
+  color: #94a3b8;
+}
+
+.metaRow a {
+  color: #93c5fd;
+}
+
+.sideLinks {
+  @apply mt-6 flex flex-wrap gap-3;
+}
+
+.sideLink {
+  @apply inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold;
+  border-color: rgba(125, 211, 252, 0.3);
+  color: #bae6fd;
+  background: rgba(12, 74, 110, 0.32);
+}
+
+.heroCard {
+  @apply rounded-3xl p-6 md:p-8;
+  justify-self: center;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(99, 102, 241, 0.22), transparent 45%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.86));
+  box-shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+}
+
+.profileAvatarWrap {
+  @apply mx-auto mb-5 h-44 w-44 overflow-hidden rounded-full p-[3px];
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+}
+
+.profileAvatar {
+  @apply h-full w-full rounded-full object-cover;
+}
+
+.profileName {
+  @apply text-center text-lg font-extrabold;
+  overflow-wrap: anywhere;
+  color: #f8fafc;
+}
+
+.profileRole {
+  @apply mt-1 text-center text-sm font-semibold;
+  color: #93c5fd;
+}
+
+.profileDetails {
+  @apply mt-5 grid gap-2;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal1 {
+  animation-delay: 80ms;
+}
+
+.reveal2 {
+  animation-delay: 160ms;
+}
+
+.reveal3 {
+  animation-delay: 240ms;
+}
+
+.reveal4 {
+  animation-delay: 320ms;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroGrid {
+    @apply gap-7 py-12;
+  }
+
+  .heroCard {
+    @apply max-w-xl;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroGrid {
+    justify-items: start;
+  }
+
+  .heroGrid > * {
+    width: 100%;
+  }
+
+  .heroGhost {
+    font-size: clamp(2.5rem, 19vw, 6.3rem);
+    -webkit-text-stroke: 1px rgba(148, 163, 184, 0.2);
+  }
+
+  .h1 {
+    @apply text-2xl;
+  }
+
+  .lead {
+    @apply text-sm;
+  }
+
+  .ctas {
+    @apply mt-6 grid gap-2;
+  }
+
+  .sideLinks {
+    @apply mt-4 gap-2;
+  }
+
+  .heroCard {
+    @apply rounded-xl p-4;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    justify-self: start;
+  }
+
+  .profileAvatarWrap {
+    @apply h-32 w-32;
+  }
+}
+
+@media (max-width: 420px) {
+  .metaRow {
+    @apply text-xs;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

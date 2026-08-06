@@ -1,37 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Mirado
 
-## Getting Started
+Site portfolio Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4.
 
-First, run the development server:
+## Démarrage
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Serveur de développement (webpack) |
+| `npm run build` | Build de production |
+| `npm run start` | Serveur de production |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | Vérification TypeScript (`tsc --noEmit`) |
+| `npm test` | Vitest (exécution unique) |
+| `npm run test:watch` | Vitest (mode watch) |
+| `npm run test:coverage` | Vitest avec rapport de couverture |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture
 
-## Learn More
+```
+src/
+├── app/                  # App Router : routing uniquement
+│   ├── layout.tsx
+│   ├── page.tsx          # composition des sections
+│   ├── globals.css
+│   ├── page.module.css   # chrome de page (arrière-plans, animations)
+│   └── api/contact/      # route handler (formulaire de contact)
+├── components/
+│   ├── layout/           # Header, Footer, Container
+│   ├── sections/         # Hero, About, Skills, Projects, Formations, Contact
+│   ├── ui/               # primitives : Button, Badge, Tag, Section, RevealOnScroll
+│   └── forms/            # ContactForm
+├── data/                 # contenu du site (content.ts)
+├── lib/                  # logique métier testable (validation)
+└── types/                # types partagés du contenu
+```
 
-To learn more about Next.js, take a look at the following resources:
+Chaque composant est colocalisé avec son module CSS (`ComponentName.module.css`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Formulaire de contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Le formulaire envoie un POST vers `/api/contact` (route handler), qui valide la
+charge puis la transmet à un webhook n8n. Variables d'environnement requises :
 
-## Deploy on Vercel
+```
+N8N_WEBHOOK_URL=https://...
+N8N_SHARED_SECRET=...
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tests
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Portofolio
+Les tests (Vitest + Testing Library) couvrent le formulaire, l'animation au
+scroll, les sections et la validation de l'API :
+
+```bash
+npm test
+npm run test:coverage
+```
+
+## Conventions
+
+- **Composants** : `PascalCase.tsx`, fichier = composant exporté ; `"use client"` en tête pour les composants client
+- **Fonctions** : `camelCase`, verb-first (`handleSubmit`)
+- **Types** : `PascalCase` exportés dans `src/types/`
+- **CSS Modules** : `ComponentName.module.css`, classes en `camelCase`
+- **Imports** : React → next → `@/components` → `@/data` → `@/lib` → CSS

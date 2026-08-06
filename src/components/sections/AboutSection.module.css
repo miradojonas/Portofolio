@@ -1,0 +1,40 @@
+@reference "../../app/globals.css";
+
+.aboutGrid {
+  @apply grid gap-6 lg:grid-cols-[1.2fr_0.8fr];
+}
+
+.stack {
+  @apply flex flex-col gap-4;
+}
+
+.highlightGrid {
+  @apply grid gap-3;
+}
+
+.card {
+  @apply rounded-xl border p-5;
+  border-color: rgba(129, 140, 248, 0.28);
+  background: rgba(30, 41, 59, 0.55);
+}
+
+.cardLabel {
+  @apply text-xs font-semibold uppercase tracking-[0.2em];
+  color: #7dd3fc;
+}
+
+.cardValue {
+  @apply mt-2 text-sm font-semibold;
+  color: #e2e8f0;
+}
+
+.p {
+  @apply text-sm leading-relaxed md:text-base;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .card {
+    @apply rounded-xl p-4;
+  }
+}

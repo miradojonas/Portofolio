@@ -1,14 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-
-type Payload = {
-  name: string;
-  email: string;
-  message: string;
-};
-
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+import { validateContactPayload } from "@/lib/validation";
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,28 +8,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Body vide" }, { status: 400 });
     }
 
-    let body: Partial<Payload>;
+    let input: unknown;
     try {
-      body = JSON.parse(raw) as Partial<Payload>;
+      input = JSON.parse(raw) as unknown;
     } catch {
       return NextResponse.json({ error: "JSON invalide" }, { status: 400 });
     }
 
-    const name = body.name?.trim();
-    const email = body.email?.trim();
-    const message = body.message?.trim();
-
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: "Champs requis manquants" }, { status: 400 });
+    const validation = validateContactPayload(input);
+    if (!validation.ok) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    if (!isValidEmail(email)) {
-      return NextResponse.json({ error: "Email invalide" }, { status: 400 });
-    }
-
-    if (name.length > 100 || email.length > 200 || message.length > 3000) {
-      return NextResponse.json({ error: "Contenu trop long" }, { status: 400 });
-    }
+    const { name, email, message } = validation.data;
 
     const webhookUrl = process.env.N8N_WEBHOOK_URL;
     const secret = process.env.N8N_SHARED_SECRET;
