@@ -1,17 +1,61 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════
+   DESIGN SYSTEM — Warm Off-White × Navy × Accent
+   ═══════════════════════════════════════════════════
+
+   Palette officielle :
+     BG         #F3F1EA   Fond dominant (blanc cassé chaud)
+     Surface    #FAF9F5   Surfaces / cartes (plus clair que BG)
+     Text       #101828   Titres / texte principal
+     Secondary  #475467   Descriptions / paragraphe
+     Border     #D6D8D3   Bordures / séparateurs
+     Primary    #12355B   Bleu marine — identité visuelle
+     Accent     #2563EB   Bleu électrique — TRÈS limité
+
+   Hiérarchie :  #F3F1EA → #FAF9F5 → #12355B → #2563EB
+
+   Règles accent :
+     L'accent bleu électrique (#2563EB) ne s'utilise QUE pour :
+       – le CTA principal du Hero (une seule fois)
+       – l'anneau de focus :focus-visible (accessibilité)
+       – les hover states de liens interactifs
+     Tout le reste utilise primary / text / border.
+   ═══════════════════════════════════════════════════ */
+
 :root {
-  --primary: #6366F1;
-  --primary-dark: #4F46E5;
-  --primary-light: #EEF2FF;
-  --accent: #06B6D4;
-  --surface: #FFFFFF;
-  --bg: #F8FAFC;
-  --text: #1E293B;
-  --text-muted: #64748B;
-  --border: #E2E8F0;
+  /* Backgrounds */
+  --bg: #F3F1EA;
+  --surface: #FAF9F5;
+
+  /* Borders */
+  --border: #D6D8D3;
+
+  /* Text */
+  --text: #101828;
+  --text-secondary: #475467;
+  --text-muted: #667085;
+
+  /* Brand */
+  --primary: #12355B;
+  --primary-light: #1A4A7A;
+  --primary-bg: #E8EDF5;
+
+  /* Accent — très limité */
+  --accent: #2563EB;
+  --accent-hover: #1D4ED8;
+
+  /* Legacy aliases (to be removed after all components migrate) */
+  --navy: #12355B;
+  --navy-light: #1A4A7A;
+  --navy-bg: #E8EDF5;
+
+  /* Type scale (Geist) */
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
+/* ── Base ────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
@@ -19,26 +63,39 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: #C7D2FE;
-  color: #312E81;
+  background-color: var(--primary);
+  color: #FFFFFF;
 }
 
-/* Interaction utilitaire partagé par tous les composants */
+/* ── Focus ring (accessibilité) ──────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Shared micro-interactions ───────────────────── */
 .tap {
-  transition: transform 120ms ease, opacity 120ms ease, box-shadow 160ms ease;
-}
-
-.tap:hover {
-  opacity: 0.96;
+  transition: color 200ms ease, opacity 160ms ease, transform 160ms ease;
 }
 
 .tap:active {
   transform: scale(0.985);
+}
+
+/* ── Section number labels ──────────────────────── */
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -46,11 +103,12 @@ body {
     transition: none;
   }
 
-  .tap:hover {
-    opacity: 1;
-  }
-
   .tap:active {
     transform: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

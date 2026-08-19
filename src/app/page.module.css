@@ -1,69 +1,29 @@
 @reference "./globals.css";
 
-@keyframes fadeUp {
+.appShell {
+  min-height: 100vh;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .pageEnter {
-  animation: fadeUp 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.appShell {
-  position: relative;
-  min-height: 100vh;
-  color: #e2e8f0;
-  background:
-    radial-gradient(circle at 18% -12%, rgba(99, 102, 241, 0.36), transparent 35%),
-    radial-gradient(circle at 85% 2%, rgba(14, 165, 233, 0.26), transparent 32%),
-    linear-gradient(180deg, #070b23 0%, #0a1030 45%, #070b1f 100%);
-}
-
-.gridBackdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.2;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 1), transparent 85%);
-}
-
-.floatingGlow {
-  position: fixed;
-  top: 14%;
-  right: 8%;
-  z-index: 0;
-  width: 300px;
-  height: 300px;
-  border-radius: 999px;
-  pointer-events: none;
-  filter: blur(40px);
-  opacity: 0.28;
-  background: radial-gradient(circle, #7c3aed 0%, #0ea5e9 42%, transparent 70%);
+  animation: fadeIn 600ms cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
 .sectionsStack {
-  @apply relative z-10 pb-2;
+  position: relative;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .pageEnter {
     animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .floatingGlow {
-    display: none;
   }
 }

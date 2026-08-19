@@ -4,28 +4,30 @@ import { content } from "@/data/content";
 
 export default function FormationsSection() {
   return (
-    <Section id="formations" title={content.formations.title}>
+    <Section id="formations" title="Experience" number="04">
       <div className={styles.timeline}>
         {content.formations.items.map((formation) => (
           <div
             key={`${formation.title}-${formation.organization}`}
-            className={styles.timelineItem}
+            className={styles.item}
           >
-            <div className={styles.timelineLeft}>
-              <div className={styles.timelineRole}>{formation.title}</div>
-              <div className={styles.timelineCompany}>{formation.organization}</div>
-              <div className={styles.timelinePeriod}>{formation.period}</div>
+            <div className={styles.itemLeft}>
+              <span className={styles.period}>{formation.period}</span>
             </div>
 
-            {formation.bullets ? (
-              <ul className={styles.bullets}>
-                {formation.bullets.map((bullet) => (
-                  <li key={bullet} className={styles.p}>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+            <div className={styles.itemRight}>
+              <h3 className={styles.role}>{formation.title}</h3>
+              <p className={styles.company}>{formation.organization}</p>
+              {formation.bullets ? (
+                <ul className={styles.bullets}>
+                  {formation.bullets.map((bullet) => (
+                    <li key={bullet} className={styles.bullet}>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
           </div>
         ))}
       </div>

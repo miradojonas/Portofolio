@@ -1,22 +1,26 @@
 import styles from "./SkillsSection.module.css";
 import Section from "@/components/ui/Section";
-import Badge from "@/components/ui/Badge";
 import { content } from "@/data/content";
 
 export default function SkillsSection() {
   return (
-    <Section id="skills" title={content.skills.title}>
-      <div className={styles.skillsGrid}>
-        {content.skills.groups.map((group) => (
-          <div key={group.name} className={styles.skillPanel}>
-            <h3 className={styles.h3}>{group.name}</h3>
+    <Section id="skills" title="Expertise" number="02">
+      <div className={styles.grid}>
+        {content.skills.groups.map((group, index) => (
+          <div key={group.name} className={styles.domain}>
+            <div className={styles.domainHeader}>
+              <span className={styles.domainNumber}>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className={styles.domainName}>{group.name}</h3>
+            </div>
             <ul className={styles.list}>
               {group.items.map((item) => (
-                <li key={item.name}>
-                  <Badge>
-                    {item.name}
-                    {item.level ? ` : ${item.level}` : ""}
-                  </Badge>
+                <li key={item.name} className={styles.item}>
+                  <span className={styles.itemName}>{item.name}</span>
+                  {item.level ? (
+                    <span className={styles.itemLevel}>{item.level}</span>
+                  ) : null}
                 </li>
               ))}
             </ul>

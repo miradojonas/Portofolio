@@ -6,24 +6,36 @@ import { content } from "@/data/content";
 
 export default function ContactSection() {
   return (
-    <Section id="contact" title={content.contact.title}>
-      <div className={styles.contactCard}>
-        <p className={styles.contactText}>{content.contact.text}</p>
+    <Section id="contact" title="Contact" number="05">
+      <div className={styles.grid}>
+        <div className={styles.left}>
+          <p className={styles.text}>{content.contact.text}</p>
 
-        <div className={styles.contactRow}>
-          <Button href={`mailto:${content.links.email}`}>Envoyer un email</Button>
-          <Button variant="ghost" href={content.links.github}>
-            GitHub
-          </Button>
-          <Button variant="ghost" href={content.links.linkedin}>
-            LinkedIn
-          </Button>
-          <Button variant="ghost" href={content.links.facebook}>
-            Facebook
-          </Button>
+          <div className={styles.links}>
+            <Button href={`mailto:${content.links.email}`}>
+              Envoyer un email
+            </Button>
+            <Button variant="ghost" href={content.links.github}>
+              GitHub
+            </Button>
+            <Button variant="ghost" href={content.links.linkedin}>
+              LinkedIn
+            </Button>
+            <Button variant="ghost" href={content.links.facebook}>
+              Facebook
+            </Button>
+          </div>
+
+          <div className={styles.cvLink}>
+            <a className={styles.link} href={content.links.cv}>
+              Télécharger mon CV ↗
+            </a>
+          </div>
         </div>
 
-        <ContactForm />
+        <div className={styles.right}>
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );

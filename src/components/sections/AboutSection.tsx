@@ -4,24 +4,36 @@ import { content } from "@/data/content";
 
 export default function AboutSection() {
   return (
-    <Section id="about" title={content.about.title}>
-      <div className={styles.aboutGrid}>
-        <div className={styles.stack}>
+    <Section id="about" title="About" number="01">
+      <div className={styles.grid}>
+        <div className={styles.statement}>
+          <p className={styles.statementText}>
+            A strong statement about who I am and what I build.
+          </p>
+        </div>
+
+        <div className={styles.body}>
           {content.about.paragraphs.map((paragraph) => (
             <p key={paragraph} className={styles.p}>
               {paragraph}
             </p>
           ))}
-        </div>
 
-        <ul className={styles.highlightGrid}>
-          {content.about.highlights.map((highlight) => (
-            <li key={highlight.label} className={styles.card}>
-              <div className={styles.cardLabel}>{highlight.label}</div>
-              <div className={styles.cardValue}>{highlight.value}</div>
-            </li>
-          ))}
-        </ul>
+          <ul className={styles.details}>
+            {content.about.highlights.map((highlight) => (
+              <li key={highlight.label} className={styles.detail}>
+                <span className={styles.detailLabel}>{highlight.label}</span>
+                <span className={styles.detailValue}>{highlight.value}</span>
+              </li>
+            ))}
+            {content.profile.details.map((detail) => (
+              <li key={detail.label} className={styles.detail}>
+                <span className={styles.detailLabel}>{detail.label}</span>
+                <span className={styles.detailValue}>{detail.value}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Section>
   );

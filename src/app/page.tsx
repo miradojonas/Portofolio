@@ -13,9 +13,6 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 export default function Home() {
   return (
     <div className={styles.appShell}>
-      <div className={styles.gridBackdrop} aria-hidden="true" />
-      <div className={styles.floatingGlow} aria-hidden="true" />
-
       <Header />
 
       <main id="top" className={styles.pageEnter}>

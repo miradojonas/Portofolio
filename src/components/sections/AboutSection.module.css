@@ -1,40 +1,83 @@
 @reference "../../app/globals.css";
 
-.aboutGrid {
-  @apply grid gap-6 lg:grid-cols-[1.2fr_0.8fr];
+.grid {
+  display: grid;
+  gap: 3rem;
 }
 
-.stack {
-  @apply flex flex-col gap-4;
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
 }
 
-.highlightGrid {
-  @apply grid gap-3;
+.statementText {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--primary);
 }
 
-.card {
-  @apply rounded-xl border p-5;
-  border-color: rgba(129, 140, 248, 0.28);
-  background: rgba(30, 41, 59, 0.55);
-}
-
-.cardLabel {
-  @apply text-xs font-semibold uppercase tracking-[0.2em];
-  color: #7dd3fc;
-}
-
-.cardValue {
-  @apply mt-2 text-sm font-semibold;
-  color: #e2e8f0;
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .p {
-  @apply text-sm leading-relaxed md:text-base;
-  color: #94a3b8;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.detailLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.detailValue {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: right;
 }
 
 @media (max-width: 768px) {
-  .card {
-    @apply rounded-xl p-4;
+  .statementText {
+    font-size: 1.5rem;
+  }
+
+  .detail {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .detailValue {
+    text-align: left;
   }
 }

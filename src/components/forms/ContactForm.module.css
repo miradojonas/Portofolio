@@ -1,60 +1,86 @@
 @reference "../../app/globals.css";
 
 .contactForm {
-  @apply mt-7 rounded-xl border p-4 md:p-5;
-  border-color: rgba(148, 163, 184, 0.24);
-  background: rgba(2, 6, 23, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .formTitle {
-  @apply mb-3 text-sm font-semibold uppercase tracking-wider;
-  color: #c7d2fe;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .formGrid {
-  @apply grid gap-3 md:grid-cols-2;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .formField {
-  @apply mb-3 flex flex-col gap-1.5 text-sm;
-  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .formField input,
 .formField textarea {
-  @apply rounded-lg border px-3 py-2 text-sm;
-  border-color: rgba(148, 163, 184, 0.3);
-  color: #e2e8f0;
-  background: rgba(15, 23, 42, 0.7);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  color: var(--text);
+  background: var(--surface);
+  transition: border-color 200ms ease;
 }
 
 .formField input::placeholder,
 .formField textarea::placeholder {
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .formField input:focus,
 .formField textarea:focus {
-  outline: 2px solid rgba(99, 102, 241, 0.75);
+  outline: 2px solid var(--accent);
   outline-offset: 0;
-  border-color: rgba(129, 140, 248, 0.7);
+  border-color: var(--accent);
+}
+
+.formField textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .submitButton {
-  @apply mt-1;
+  align-self: flex-start;
 }
 
 .submitButton:disabled {
   cursor: not-allowed;
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .formSuccess {
-  @apply mt-3 text-sm font-medium;
-  color: #86efac;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
 }
 
 .formError {
-  @apply mt-3 text-sm font-medium;
-  color: #fca5a5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #B42318;
 }

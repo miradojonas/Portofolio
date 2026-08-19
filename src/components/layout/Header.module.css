@@ -1,64 +1,64 @@
 @reference "../../app/globals.css";
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
-  background: rgba(8, 13, 40, 0.65);
-  backdrop-filter: blur(12px);
-}
-
-.nav {
-  @apply flex items-center gap-3 py-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 3rem;
+  background: rgba(243, 241, 234, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
 }
 
 .brand {
-  @apply max-w-xs truncate text-sm font-bold md:text-base;
-  color: #f8fafc;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  text-transform: uppercase;
 }
 
-.navLinks {
-  @apply mx-auto hidden gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 lg:flex;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
 }
 
-.navLinks a {
-  color: #cbd5e1;
+.navLink {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 200ms ease;
 }
 
-.navLinks a:hover {
-  color: #93c5fd;
-}
-
-@media (max-width: 1024px) {
-  .nav {
-    @apply flex-wrap items-start;
-  }
-
-  .navLinks {
-    @apply order-3 mt-3 flex w-full gap-2 overflow-x-auto pb-1;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .navLinks a {
-    @apply whitespace-nowrap rounded-full border px-3 py-1.5;
-    border-color: rgba(148, 163, 184, 0.28);
-    background: rgba(15, 23, 42, 0.55);
-  }
+.navLink:hover {
+  color: var(--primary);
 }
 
 @media (max-width: 768px) {
-  .brand {
-    @apply max-w-[65vw] text-xs;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  .header {
+    padding: 1.25rem 1.25rem;
   }
-}
 
-@media (max-width: 420px) {
+  .nav {
+    gap: 1.5rem;
+  }
+
+  .navLink {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+  }
+
   .brand {
-    @apply max-w-[58vw];
+    font-size: 0.75rem;
   }
 }

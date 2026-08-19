@@ -33,12 +33,11 @@ export const content: SiteContent = {
   },
 
   hero: {
-    headline: "Salut, moi c’est Mirado.",
-    subheadline:
-      "Étudiant en informatique, je construis des projets concrets (web, backend, DevOps) et je cherche une alternance / un stage pour approfondir mes connaissances.",
+    headline: "I Build\nDigital Systems.",
+    subheadline: "DevOps · Backend · Infrastructure",
     ctas: [
-      { label: "Voir mes projets", href: "#projects" },
-      { label: "Me contacter", href: "#contact" },
+      { label: "Explore my work", href: "#projects" },
+      { label: "Contact", href: "#contact" },
     ],
   },
 
